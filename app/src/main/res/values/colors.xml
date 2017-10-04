@@ -6,6 +6,7 @@
     <color name="white">#FFF</color>
     <color name="grey">#BFBFBF</color>
     <color name="colorDivider">#800000</color>
+    <color name="colorTextIcons">#855160</color>
+    <color name="colorPrimaryLight">#d09d9a</color>
 
-    #800000
 </resources>

@@ -32,7 +32,8 @@ dependencies {
     compile 'com.android.support:design:26.+'
     //botom navigation design-no movement
     compile 'com.github.ittianyu:BottomNavigationViewEx:1.2.1'
-
+    //butterknife dependency
+    compile 'com.jakewharton:butterknife:7.0.1'
 
 
 }
