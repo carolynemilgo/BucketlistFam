@@ -1,5 +1,6 @@
 package com.example.carol.bucketlistfam;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -24,6 +25,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private FirebaseAuth.AuthStateListener mAuthListener;//adding an auth state listener for login activity
 
     public static final String TAG = LoginActivity.class.getSimpleName();
+    private ProgressDialog mAuthProgressDialog;//progress dialogs for login
 
     @Bind(R.id.passwordLoginButton)
     Button mPasswordLoginButton;
@@ -49,6 +51,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mRegisterTextView.setOnClickListener(this);
         mAuth = FirebaseAuth.getInstance();
         mPasswordLoginButton.setOnClickListener(this);
+        createAuthProgressDialog();
         //adding the auth state listener
         mAuth = FirebaseAuth.getInstance();
 
@@ -67,7 +70,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         };
 
     }
-
+//method implementing progress dialogs
+private void createAuthProgressDialog() {
+    mAuthProgressDialog = new ProgressDialog(this);
+    mAuthProgressDialog.setTitle("Loading...");
+    mAuthProgressDialog.setMessage("Adventure loading...");
+    mAuthProgressDialog.setCancelable(false);
+}
     @Override
     public void onClick(View view) {
         if (view == mRegisterTextView) {
@@ -90,11 +99,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             mPasswordEditText.setError("Password cannot be blank. Use 6 characters");
             return;
         }
+        mAuthProgressDialog.show();
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
 
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        mAuthProgressDialog.dismiss();
                         Log.d(TAG, "signInWithEmail:onComplete:" + task.isSuccessful());
                         if (!task.isSuccessful()) {
                             Log.w(TAG, "signInWithEmail", task.getException());
