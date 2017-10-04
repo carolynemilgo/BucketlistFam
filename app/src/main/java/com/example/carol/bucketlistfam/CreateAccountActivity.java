@@ -19,7 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class CreateAccountActivity extends AppCompatActivity {
+public class CreateAccountActivity extends AppCompatActivity implements View.OnClickListener {
     @Bind(R.id.createUserButton)
     Button mCreateUserButton;
     @Bind(R.id.nameEditText)
@@ -44,6 +44,7 @@ public class CreateAccountActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
     }
+
     @Override
     public void onClick(View view) {
 
