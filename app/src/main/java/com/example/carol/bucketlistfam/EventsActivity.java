@@ -13,7 +13,7 @@ import android.widget.TextView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class EventsActivity extends AppCompatActivity {
+public class EventsActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = EventsActivity.class.getSimpleName();
     @Bind(R.id.appNameTextView)
     TextView mAppNameTextView;
@@ -29,7 +29,11 @@ public class EventsActivity extends AppCompatActivity {
         Typeface ostrichFont = Typeface.createFromAsset(getAssets(), "fonts/Raleway-Thin.ttf");
         mAppNameTextView.setTypeface(ostrichFont);
 
-        mFindEventsButton.setOnClickListener(new View.OnClickListener() {
+
+        mFindEventsButton.setOnClickListener(this);
+    }
+
+
             @Override
             public void onClick(View v) {
 
@@ -38,14 +42,15 @@ public class EventsActivity extends AppCompatActivity {
                 Intent intent = new Intent(EventsActivity.this, TimeineActivity.class);
                 startActivity(intent);
             }
-        });
-    }
+        }
 
 
-    private void getEvents(String event) {
-        final BriteService yelpService = new BriteService();
-        //yelpService.findEvents(event, new Callback() {
 
-        //  });
-    }
-}
+
+//    private void getEvents(String event) {
+//        final BriteService yelpService = new BriteService();
+//        //yelpService.findEvents(event, new Callback() {
+//
+//        //  });
+//    }
+//}

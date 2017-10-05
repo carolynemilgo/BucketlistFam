@@ -1,10 +1,9 @@
 package com.example.carol.bucketlistfam;
 
-import javax.security.auth.callback.Callback;
-
 import okhttp3.Call;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
+import okhttp3.Request;
 import se.akerfeldt.okhttp.signpost.OkHttpOAuthConsumer;
 import se.akerfeldt.okhttp.signpost.SigningInterceptor;
 
@@ -14,10 +13,10 @@ import se.akerfeldt.okhttp.signpost.SigningInterceptor;
 
 public class BriteService {
 
-    public static void findEvents(String event, Callback callback){
+    public static void findEvents(String event, okhttp3.Callback callback){
 
         OkHttpOAuthConsumer consumer = new OkHttpOAuthConsumer(Constants.BRITE_CONSUMER_KEY, Constants.BRITE_CONSUMER_SECRET);
-        consumer.setTokenWithSecret(Constants.BRITE_TOKEN, Constants.BRITE_TOKEN_SECRET);
+       // consumer.setTokenWithSecret(Constants.BRITE_TOKEN, Constants.BRITE_TOKEN_SECRET);
 
         OkHttpClient client = new OkHttpClient.Builder()
                 .addInterceptor(new SigningInterceptor(consumer))
@@ -27,7 +26,11 @@ public class BriteService {
         urlBuilder.addQueryParameter(Constants.BRITE_QUERY_PARAMETER, event);
         String url = urlBuilder.build().toString();
 
+        Request request= new Request.Builder()
+                .url(url)
+                .build();
 
+//calling a request asynchronously
         Call call = client.newCall(request);
         call.enqueue(callback);
     }

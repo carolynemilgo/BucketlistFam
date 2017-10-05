@@ -22,7 +22,7 @@
           android:id="@+id/appNameTextView"
         android:textColor="@color/colorTextIcons"
         android:textSize="35sp"
-          
+
           android:layout_alignParentTop="true"
           android:layout_centerHorizontal="true" />
     <EditText
