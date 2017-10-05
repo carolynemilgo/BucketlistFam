@@ -46,11 +46,3 @@ public class EventsActivity extends AppCompatActivity implements View.OnClickLis
 
 
 
-
-//    private void getEvents(String event) {
-//        final BriteService yelpService = new BriteService();
-//        //yelpService.findEvents(event, new Callback() {
-//
-//        //  });
-//    }
-//}
