@@ -1,9 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.carol.bucketlistfam.EventsActivity">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/imageView"
+        android:src="@drawable/background"
+        android:scaleType="centerCrop"
+        android:layout_above="@+id/findEventsButton"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
 
-</android.support.constraint.ConstraintLayout>
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Events Timeline"
+          android:id="@+id/appNameTextView"
+        android:textColor="@color/colorTextIcons"
+        android:textSize="35sp"
+          
+          android:layout_alignParentTop="true"
+          android:layout_centerHorizontal="true" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/eventsEditText"
+
+        android:layout_marginBottom="72dp"
+        android:padding="5dp"
+        android:background="@color/white"
+        android:hint="Browse events in Kenya"
+        android:layout_above="@+id/findEventsButton"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Browse Events"
+        android:id="@+id/findEventsButton"
+        android:layout_alignParentBottom="true"
+        android:background="@color/grey"
+        android:textColor="@color/colorTextIcons"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>
