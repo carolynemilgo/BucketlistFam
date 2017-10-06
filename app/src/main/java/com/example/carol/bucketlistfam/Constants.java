@@ -10,7 +10,9 @@ public class Constants {
     public static final String BRITE_TOKEN = BuildConfig.BRITE_TOKEN;
     public static final String BRITE_TOKEN_SECRET = BuildConfig.BRITE_TOKEN_SECRET;
 
-    public static final String BASE_URL="https://www.eventbriteapi.com/v3/events/search/?token=BRITE_CONSUMER_KEY";
+   // public static final String BASE_URL="https://www.eventbriteapi.com/v3/events/search/?token=PJZZSEB6KDEB6ZNHGP";
+
+    public static final String BASE_URL="https://api.twitter.com/1.1/search/tweets.json";
     public static final String BRITE_QUERY_PARAMETER = "q";
 
     //public static final String BASE_URL="https://www.eventbriteapi.com/v3/search/me/?token=SESXYS4X3FJ5LHZRWGKQ"

@@ -32,9 +32,11 @@ public class MainActivity extends AppCompatActivity {
     //varibales
     private Button btnChoose,btnUpload;
     private ImageView imageView;
+
     private Uri filePath;
     private final int PICK_IMAGE_REQUEST=71;
     private TextView mTextView;
+    private TextView mTextView2;
 
     //firebase
     FirebaseStorage storage;
@@ -57,7 +59,17 @@ public class MainActivity extends AppCompatActivity {
         btnUpload=(Button) findViewById(R.id.btnUpload);
         imageView=(ImageView) findViewById(R.id.imgView);
         mTextView=(TextView) findViewById(R.id.timeline);
+        mTextView2=(TextView) findViewById(R.id.gallery);
 
+        mTextView2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(MainActivity.this, DisplayImagesActivity.class);
+                //intent.putExtra("location", location);
+                startActivity(intent);
+            }
+
+        });
         btnUpload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
 
-                Intent intent = new Intent(MainActivity.this, DisplayImagesActivity.class);
+                Intent intent = new Intent(MainActivity.this, EventsActivity.class);
                 //intent.putExtra("location", location);
                 startActivity(intent);
             }

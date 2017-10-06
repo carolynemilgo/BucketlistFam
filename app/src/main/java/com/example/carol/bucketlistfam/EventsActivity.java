@@ -17,8 +17,12 @@ public class EventsActivity extends AppCompatActivity implements View.OnClickLis
     public static final String TAG = EventsActivity.class.getSimpleName();
     @Bind(R.id.appNameTextView)
     TextView mAppNameTextView;
-    @Bind(R.id.findEventsButton) Button mFindEventsButton;
-    @Bind(R.id.eventsEditText) EditText mEventsEditText;
+    @Bind(R.id.findEventsButton)
+    Button mFindEventsButton;
+    @Bind(R.id.eventsEditText)
+    EditText mEventsEditText;
+    @Bind(R.id.photoUploadButton)
+    Button mUploadPhotosButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,18 +35,28 @@ public class EventsActivity extends AppCompatActivity implements View.OnClickLis
 
 
         mFindEventsButton.setOnClickListener(this);
+        mUploadPhotosButton.setOnClickListener(this);
+
     }
 
 
-            @Override
-            public void onClick(View v) {
+    @Override
+    public void onClick(View v) {
+        if (v == mFindEventsButton) {
 
-                String location = mEventsEditText.getText().toString();
-                Log.d(TAG, location);
-                Intent intent = new Intent(EventsActivity.this, TimeineActivity.class);
-                startActivity(intent);
-            }
+            String event = mEventsEditText.getText().toString();
+            Log.d(TAG, event);
+            Intent intent = new Intent(EventsActivity.this, TimeineActivity.class);
+            intent.putExtra("event", event);
+            startActivity(intent);
         }
+        if(v==mUploadPhotosButton){
+            Intent intent = new Intent(EventsActivity.this, MainActivity.class);
+            startActivity(intent);
+        }
+
+    }
+}
 
 
 

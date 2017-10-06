@@ -5,15 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.carol.bucketlistfam.EventsActivity">
+
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
         android:id="@+id/imageView"
-        android:src="@drawable/background"
-        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_above="@+id/findEventsButton"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true" />
+        android:scaleType="centerCrop"
+        android:src="@drawable/images" />
 
       <TextView
         android:layout_width="wrap_content"
@@ -40,10 +41,19 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Browse Events"
+        android:text="Browse Adventures"
         android:id="@+id/findEventsButton"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorTextIcons"
+        android:layout_above="@+id/photoUploadButton" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Upload adventure photos"
+        android:id="@+id/photoUploadButton"
+        android:layout_marginTop="3dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/grey"
+        android:background="@color/colorPrimaryDark"
         android:textColor="@color/colorTextIcons"
         android:layout_alignParentEnd="true" />
 

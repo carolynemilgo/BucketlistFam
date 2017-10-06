@@ -97,6 +97,8 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
 
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+
+
                 final FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
                     Intent intent = new Intent(CreateAccountActivity.this, MainActivity.class);
