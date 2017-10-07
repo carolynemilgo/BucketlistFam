@@ -6,11 +6,15 @@ package com.example.carol.bucketlistfam;
 
 public class Story {
 
-   
+
         private String Title;
         private String Story;
 
-        public Story() {
+    public Story (){};
+
+        public Story(String title, String story) {
+            this.Title=title;
+            this.Story=story;
         }
 
         public String getTitle() {

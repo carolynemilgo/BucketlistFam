@@ -23,6 +23,7 @@ public class EventsActivity extends AppCompatActivity implements View.OnClickLis
     EditText mEventsEditText;
     @Bind(R.id.photoUploadButton)
     Button mUploadPhotosButton;
+    @Bind(R.id.postEventBtn) Button mPostEventBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,7 @@ public class EventsActivity extends AppCompatActivity implements View.OnClickLis
 
         mFindEventsButton.setOnClickListener(this);
         mUploadPhotosButton.setOnClickListener(this);
+        mPostEventBtn.setOnClickListener(this);
 
     }
 
@@ -55,6 +57,10 @@ public class EventsActivity extends AppCompatActivity implements View.OnClickLis
             startActivity(intent);
         }
 
+        if(v==mPostEventBtn){
+            Intent intent = new Intent(EventsActivity.this, PostEvent.class);
+            startActivity(intent);
+        }
     }
 }
 
