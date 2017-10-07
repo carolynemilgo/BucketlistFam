@@ -14,7 +14,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/images" />
+        android:src="@drawable/place3" />
 
       <TextView
         android:layout_width="wrap_content"
@@ -43,28 +43,28 @@
         android:layout_height="wrap_content"
         android:text="Browse Adventures"
         android:id="@+id/findEventsButton"
-        android:background="@color/colorPrimaryDark"
-        android:textColor="@color/colorTextIcons"
+        android:background="@color/colorAccent"
+        android:textColor="@color/white"
         android:layout_above="@+id/photoUploadButton" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Upload adventure photos"
         android:id="@+id/photoUploadButton"
-
-        android:background="@color/colorPrimaryDark"
-        android:textColor="@color/colorTextIcons"
+        android:layout_marginTop="3dp"
+        android:background="@color/colorAccent"
+        android:textColor="@color/white"
         android:layout_above="@+id/postEventBtn"
         android:layout_alignParentStart="true" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Upload adventure photos"
+        android:text="Post an event"
         android:id="@+id/postEventBtn"
         android:layout_marginTop="3dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimaryDark"
-        android:textColor="@color/colorTextIcons"
+        android:background="@color/colorAccent"
+        android:textColor="@color/white"
         android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
