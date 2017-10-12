@@ -95,15 +95,23 @@ public class NavigationDrawer extends AppCompatActivity
 
 
         } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-            Intent intent = new Intent(NavigationDrawer.this, MainActivity.class);
+            Intent intent = new Intent(NavigationDrawer.this, DisplayImagesActivity.class);
             //intent.putExtra("location", location);
             startActivity(intent);
+
+        } else if (id == R.id.nav_slideshow) {
+            Intent intent = new Intent(NavigationDrawer.this, EventsActivity.class);
+            //intent.putExtra("location", location);
+            startActivity(intent);
+
+        } else if (id == R.id.nav_manage) {
+            Intent intent = new Intent(NavigationDrawer.this, LoginActivity.class);
+            //intent.putExtra("location", location);
+            startActivity(intent);
+
+
+        } else if (id == R.id.nav_share) {
+
 
         } else if (id == R.id.nav_send) {
 
